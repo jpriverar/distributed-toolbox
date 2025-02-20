@@ -211,22 +211,22 @@ func TestMerge(t *testing.T) {
 			*NewMemberList(
 				[]MemberListEntry{
 					{ids[0], "192.168.0.23", 0, dummyTime},
-					{ids[0], "192.168.0.24", 1, dummyTime},
-					{ids[0], "192.168.0.25", 2, dummyTime},
+					{ids[1], "192.168.0.24", 1, dummyTime},
+					{ids[2], "192.168.0.25", 2, dummyTime},
 				},
 			),
 			*NewMemberList(
 				[]MemberListEntry{
 					{ids[0], "192.168.0.23", 1, dummyTime},
-					{ids[0], "192.168.0.24", 2, dummyTime},
-					{ids[0], "192.168.0.25", 0, dummyTime},
+					{ids[1], "192.168.0.24", 2, dummyTime},
+					{ids[2], "192.168.0.25", 0, dummyTime},
 				},
 			),
 			*NewMemberList(
 				[]MemberListEntry{
 					{ids[0], "192.168.0.23", 1, dummyTime},
-					{ids[0], "192.168.0.24", 2, dummyTime},
-					{ids[0], "192.168.0.25", 2, dummyTime},
+					{ids[1], "192.168.0.24", 2, dummyTime},
+					{ids[2], "192.168.0.25", 2, dummyTime},
 				},
 			),
 		},
