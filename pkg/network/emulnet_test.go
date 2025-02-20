@@ -10,10 +10,8 @@ func TestSingleMessage(t *testing.T) {
 							avgLatency: 0,
 							dropRate: 0,
 						})
-	network.Start()
-	defer network.Stop()
 
-	network.RegisterNode("Node0")
+	network.Register("Node0")
 
 	go network.Send("Node0", Message{
 		Type: "test",
@@ -38,12 +36,10 @@ func TestMultipleMessages(t *testing.T) {
 							avgLatency: 0,
 							dropRate: 0,
 						})
-	network.Start()
-	defer network.Stop()
 
 	nodeCount := 10
 	for i := 0; i < nodeCount; i++ {
-		network.RegisterNode("Node" + strconv.Itoa(i))
+		network.Register("Node" + strconv.Itoa(i))
 	}
 
 	messageCount := 100

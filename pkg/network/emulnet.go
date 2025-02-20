@@ -23,7 +23,7 @@ func NewEmulnet(config *EmulnetConfig) *Emulnet {
 	}
 }
 
-func (net *Emulnet) RegisterNode(id string) error {
+func (net *Emulnet) Register(id string) error {
 	net.lock.Lock()
 	defer net.lock.Unlock()
 
@@ -36,7 +36,7 @@ func (net *Emulnet) RegisterNode(id string) error {
 	return nil
 }
 
-func (net *Emulnet) UnregisterNode(id string) error {
+func (net *Emulnet) Unregister(id string) error {
 	net.lock.Lock()
 	defer net.lock.Unlock()
 
@@ -71,12 +71,4 @@ func (net *Emulnet) Receive(id string) (Message, error) {
 	} else {
 		return Message{}, fmt.Errorf("node with ID %s is not registered in the network", id)
 	}
-}
-
-func (net *Emulnet) Start() {
-
-}
-
-func (net *Emulnet) Stop() {
-
 }
